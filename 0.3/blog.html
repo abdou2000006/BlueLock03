@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - Blue Lock</title>
+    <link rel="icon" type="logo.png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <!-- رابط إلى الصفحة الرئيسية -->
+            <img src="logo.png" alt="Blue Lock Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-icon"><i class="fas fa-home"></i><span>الرئيسية</span></a></li>
+                <li><a href="about.html" class="nav-icon"><i class="fas fa-users"></i><span>من نحن</span></a></li>
+                <li><a href="blog.html" class="nav-icon"><i class="fas fa-book"></i><span>المدونة</span></a></li>
+                <li><a href="characters.html" class="nav-icon"><i class="fas fa-user-friends"></i><span>الشخصيات</span></a></li>
+                <li><a href="contact.html" class="nav-icon"><i class="fas fa-envelope"></i><span>اتصل بنا</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="page-content animate-on-scroll">
+        <a href="#" class="btn" id="explore-btn">المدونة   </a>
+        <!-- المربع الأزرق الذي سيظهر عند النقر -->
+        <div id="about-box" class="about-box hidden">
+            <p>
+                🎌✨ مرحبًا عشاق الأنمي! ✨🎌<br><br>
+                نحن فريق Blue Lock الشغوف، هنا لنأخذكم في رحلة مثيرة داخل عالم أنمي Blue Lock! 🏃‍♂️🔥 سواء كنتم من المتابعين القدامى أو حديثي العهد بهذا العالم المليء بالإثارة والتنافس، فنحن هنا لنوفر لكم أحدث المستجدات، الحلقات، الأخبار، والنظريات التي ستُبقي قلوبكم معلقة! 💙🔒<br><br>
+                🎥 حلقات جديدة؟ سنكون أول من يخبركم!<br>
+                📰 أخبار حصرية؟ لدينا كل التفاصيل!<br>
+                🎮 ألعاب، ميرتش، وفنون؟ لا تقلقوا، سنغطيها جميعًا!<br><br>
+                انضموا إلينا في هذه المغامرة المليئة بالإثارة والمنافسة، حيث كل هدف يقربنا من اكتشاف أعظم مهاجم في العالم! 🌍⚽️<br><br>
+                🔥 هل أنتم مستعدون لدخول Blue Lock؟ 🔥<br>
+                تابعونا لتكونوا دائمًا على اطلاع بكل ما هو جديد ومثير! 💌<br><br>
+                #BlueLock #أنمي #BlueLock_فريق #أنمي_جديد #إثارة_وتنافس<br><br>
+                🎌 مع حب، فريق Blue Lock 🎌
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Blue Lock. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="click-sound.js"></script>
+    <script src="scroll-animations.js"></script>
+    <script src="icon-animations.js"></script>
+    <script src="extra-effects.js"></script>
+    <script>
+        // إظهار وإخفاء المربع الأزرق عند النقر على "من نحن"
+        document.getElementById('explore-btn').addEventListener('click', function (e) {
+            e.preventDefault(); // منع الانتقال إلى رابط
+            const aboutBox = document.getElementById('about-box');
+            aboutBox.classList.toggle('hidden'); // تبديل إظهار وإخفاء المربع
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,631 @@
+/* ملف styles.css */
+/* الخطوط العامة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a192f; /* أزرق داكن */
+    color: #ffffff; /* أبيض */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* لجعل الذيل في الأسفل دائمًا */
+}
+
+/* الهيدر */
+header {
+    background-color: #0a192f; /* أزرق داكن */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #64ffda; /* أخضر فاتح */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* أبيض */
+}
+
+/* الصفحة الرئيسية */
+.hero {
+    background-image: url('hero-bg.jpg'); /* مسار الصورة */
+    background-size: cover; /* تغطية الخلفية */
+    background-position: center; /* توسيط الخلفية */
+    background-repeat: no-repeat; /* منع التكرار */
+    height: 100vh; /* ارتفاع الصفحة بالكامل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    flex-direction: column;
+    position: relative;
+}
+
+/* تدرج لوني شفاف فوق الخلفية */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 47, 0.8), /* أزرق داكن مع شفافية 80% */
+        rgba(10, 25, 47, 0.4) /* أزرق داكن مع شفافية 40% */
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2; /* لجعل المحتوى فوق التدرج اللوني */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #64ffda; /* أخضر فاتح */
+    color: #0a192f; /* أزرق داكن */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #52d1b2; /* أخضر داكن */
+    transform: translateY(-5px);
+}
+
+/* تصميم المربع الأزرق */
+.about-box {
+    background-color: #0a192f; /* أزرق داكن */
+    border: 2px solid #64ffda; /* أخضر فاتح */
+    border-radius: 10px;
+    padding: 20px;
+    color: #ffffff; /* أبيض */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute; /* لتحديد المركز */
+    top: 50%; /* تحديد المركز العمودي */
+    left: 50%; /* تحديد المركز الأفقي */
+    transform: translate(-50%, -50%) scale(0); /* ضبط المركز وإخفاء المربع */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* إضافة انتقال سلس */
+    opacity: 0; /* إخفاء المربع في البداية */
+}
+
+.about-box.hidden {
+    transform: translate(-50%, -50%) scale(0); /* إخفاء المربع */
+    opacity: 0;
+}
+
+.about-box:not(.hidden) {
+    transform: translate(-50%, -50%) scale(1); /* إظهار المربع مع تأثير Zoom-In */
+    opacity: 1;
+}
+
+.about-box p {
+    margin: 0;
+}
+
+/* لجعل الصفحة تحتوي على مساحة كافية لمركزة المربع */
+.page-content {
+    position: relative; /* لجعل المربع يظهر داخل هذا القسم */
+    min-height: 70vh; /* ارتفاع الصفحة بالكامل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* الذيل */
+footer {
+    background-color: #0a192f; /* أزرق داكن */
+    padding: 20px;
+    color: #64ffda; /* أخضر فاتح */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; /* لجعل الذيل في الأسفل دائمًا */
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* صفحة تواصل معنا */
+.contact {
+    padding: 50px 20px;
+    min-height: 70vh; /* لجعل الذيل في الأسفل */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #64ffda; /* أخضر فاتح */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 15px;
+    border: 2px solid #64ffda;
+    border-radius: 10px;
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.social-icon i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #64ffda; /* أخضر فاتح */
+    transition: color 0.3s ease;
+}
+
+.social-icon span {
+    font-size: 1rem;
+    color: #64ffda; /* أخضر فاتح */
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-10px);
+    background-color: rgba(100, 255, 218, 0.2);
+    border-color: #ffffff;
+}
+
+.social-icon:hover i,
+.social-icon:hover span {
+    color: #ffffff; /* أبيض */
+}
+
+/* ملف styles.css */
+/* الخطوط العامة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a192f; /* أزرق داكن */
+    color: #ffffff; /* أبيض */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* لجعل الذيل في الأسفل دائمًا */
+}
+
+/* الهيدر */
+header {
+    background-color: #0a192f; /* أزرق داكن */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #64ffda; /* أخضر فاتح */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* أبيض */
+}
+
+/* الصفحة الرئيسية */
+.hero {
+    background-image: url('hero-bg.jpg'); /* مسار الصورة */
+    background-size: cover; /* تغطية الخلفية */
+    background-position: center; /* توسيط الخلفية */
+    background-repeat: no-repeat; /* منع التكرار */
+    height: 100vh; /* ارتفاع الصفحة بالكامل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    flex-direction: column;
+    position: relative;
+}
+
+/* تدرج لوني شفاف فوق الخلفية */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 47, 0.8), /* أزرق داكن مع شفافية 80% */
+        rgba(10, 25, 47, 0.4) /* أزرق داكن مع شفافية 40% */
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2; /* لجعل المحتوى فوق التدرج اللوني */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #64ffda; /* أخضر فاتح */
+    color: #0a192f; /* أزرق داكن */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #52d1b2; /* أخضر داكن */
+    transform: translateY(-5px);
+}
+
+/* الأيقونات المخفية */
+.hidden-icons {
+    display: none; /* الأيقونات مخفية في البداية */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    opacity: 0; /* إخفاء الأيقونات بشكل كامل */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* إضافة انتقال سلس */
+}
+
+.hidden-icons.visible {
+    display: flex; /* تظهر الأيقونات عند النقر */
+    opacity: 1; /* إظهار الأيقونات بشكل كامل */
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #64ffda; /* أخضر فاتح */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 10px;
+}
+
+.icon-link i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.icon-link span {
+    font-size: 1rem;
+}
+
+.icon-link:hover {
+    transform: translateY(-10px);
+    color: #ffffff; /* أبيض */
+}
+
+/* الذيل */
+footer {
+    background-color: #0a192f; /* أزرق داكن */
+    padding: 20px;
+    color: #64ffda; /* أخضر فاتح */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; /* لجعل الذيل في الأسفل دائمًا */
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* ملف styles.css */
+/* الخطوط العامة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a192f; /* أزرق داكن */
+    color: #ffffff; /* أبيض */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* لجعل الذيل في الأسفل دائمًا */
+}
+
+/* الهيدر */
+header {
+    background-color: #0a192f; /* أزرق داكن */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #64ffda; /* أخضر فاتح */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* أبيض */
+}
+
+/* الصفحة الرئيسية */
+.hero {
+    background-image: url('hero-bg.jpg'); /* مسار الصورة */
+    background-size: cover; /* تغطية الخلفية */
+    background-position: center; /* توسيط الخلفية */
+    background-repeat: no-repeat; /* منع التكرار */
+    height: 100vh; /* ارتفاع الصفحة بالكامل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hwb(0 100% 0%);
+    flex-direction: column;
+    position: relative;
+}
+
+/* تدرج لوني شفاف فوق الخلفية */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 47, 0.8), /* أزرق داكن مع شفافية 80% */
+        rgba(10, 25, 47, 0.4) /* أزرق داكن مع شفافية 40% */
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2; /* لجعل المحتوى فوق التدرج اللوني */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #64ffda; /* أخضر فاتح */
+    color: #0a192f; /* أزرق داكن */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #52d1b2; /* أخضر داكن */
+    transform: translateY(-5px);
+}
+
+/* تصميم بطاقات الشخصيات */
+.character-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: hsl(75, 100%, 61%); /* أخضر ليموني */
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0a192f; /* يمكنك تغيير هذا اللون إلى أي لون تريده */
+    font-family: 'Open Sans', sans-serif;}
+
+.card p {
+    font-size: 0.9rem;
+    color: #0a192f; /* يمكنك تغيير هذا اللون إلى أي لون تريده */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* ظل للنص */
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* تأثير الضوء الأزرق عند المرور فوق البطاقة */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px 10px rgba(100, 255, 218, 0.5); /* ضوء أزرق */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* ظل للنص */
+}
+
+/* الذيل */
+footer {
+    background-color: #0a192f; /* أزرق داكن */
+    padding: 20px;
+    color: #64ffda; /* أخضر فاتح */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; /* لجعل الذيل في الأسفل دائمًا */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* تأثيرات التمرير */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity:1;
+    transform: translateY(0);
+}
+
+
+
+
+.logo a {
+    display: inline-block; /* لجعل الرابط يحتوي على الصورة */
+    transition: transform 0.3s ease; /* إضافة انتقال سلس */
+}
+
+.logo a:hover {
+    transform: scale(1.1); /* تكبير اللوجو قليلاً عند المرور فوقه */
+    cursor: pointer; /* تغيير المؤشر إلى يد */
+}
+
+
+
+
+
+.arrow-down-right {
+    position: fixed; /* لجعل السهم ثابتًا في الصفحة */
+    top: 120px; /* المسافة من الأعلى */
+    right: 20px; /* المسافة من اليمين */
+    width: 0; /* عرض السهم */
+    height: 0; /* ارتفاع السهم */
+    border-left: 20px solid transparent; /* جزء شفاف من السهم */
+    border-right: 20px solid transparent; /* جزء شفاف من السهم */
+    border-top: 30px solid #64ffda; /* لون السهم الأزرق */
+    animation: glow 1.5s infinite; /* إضافة تأثير الإضاءة */
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 1; /* السهم يظهر بشكل كامل */
+        box-shadow: 0 0 10px #64ffda; /* إضاءة خفيفة */
+    }
+    50% {
+        opacity: 0.5; /* السهم يخفت قليلاً */
+        box-shadow: 0 0 20px #64ffda; /* إضاءة أقوى */
+    }
+} 
